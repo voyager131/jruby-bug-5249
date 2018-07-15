@@ -9,7 +9,7 @@ raw_data = f.read(File.size(file_name))
 f.close
 
 #at this point variable f contains the raw file data to convert
-Open3.popen3("decode") do |stdin, stdout, stderr, wait_thr|
+Open3.popen3("./decode") do |stdin, stdout, stderr, wait_thr|
   stdin.write(raw_data)
   stdin.close_write
   $image_data = stdout.read
